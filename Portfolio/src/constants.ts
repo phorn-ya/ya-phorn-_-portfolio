@@ -23,39 +23,41 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: "Frontend Development",
     skills: [
-      { name: "HTML5", level: 90, icon: Layout, color: "#E34F26" },
-      { name: "CSS3", level: 85, icon: Layout, color: "#1572B6" },
-      { name: "JavaScript", level: 80, icon: Code2, color: "#F7DF1E" },
-      { name: "React Js", level: 75, icon: Code2, color: "#61DAFB" },
-      { name: "Vue Js", level: 70, icon: Code2, color: "#4FC08D" },
-      { name: "Tailwind CSS", level: 85, icon: Layout, color: "#06B6D4" },
+      { name: "HTML5", level: 90, icon: Layout, color: "#2298F2" },
+      { name: "CSS3", level: 85, icon: Layout, color: "#2298F2" },
+      { name: "JavaScript", level: 80, icon: Code2, color: "#2298F2" },
+      { name: "Vue.js", level: 75, icon: Code2, color: "#2298F2" },
+      { name: "Tailwind CSS", level: 70, icon: Layout, color: "#2298F2" },
     ]
   },
   {
     title: "Backend Development",
     skills: [
-      { name: "PHP", level: 85, icon: Code2, color: "#777BB4" },
-      { name: "Laravel", level: 80, icon: Code2, color: "#FF2D20" },
-      { name: "Node Js", level: 55, icon: Code2, color: "#339933" },
-      { name: "TypeScript", level: 55, icon: Code2, color: "#3178C6" },
+      { name: "PHP", level: 80, icon: Code2, color: "#20BF6B" },
+      { name: "Laravel", level: 75, icon: Code2, color: "#20BF6B" },
+      { name: "Node.js", level: 70, icon: Code2, color: "#20BF6B" },
+      { name: "TypeScript", level: 55, icon: Code2, color: "#20BF6B" },
+      { name: "Python", level: 30, icon: Code2, color: "#20BF6B" },
     ]
   },
   {
     title: "Database Management",
     skills: [
-      { name: "MySQL", level: 85, icon: Database, color: "#4479A1" },
-      { name: "Postgre SQL", level: 55, icon: Database, color: "#4169E1" },
-      { name: "Laragon SQL", level: 50, icon: Database, color: "#35a6ac" },
+      { name: "MySQL", level: 85, icon: Database, color: "#A855F7" },
+      { name: "PostgreSQL", level: 50, icon: Database, color: "#A855F7" },
+      { name: "LaragonSQL", level: 50, icon: Database, color: "#A855F7" }
     ]
   },
   {
     title: "Development Tools",
     skills: [
-      { name: "Git", level: 85, icon: Wrench, color: "#F05032" },
-      { name: "VSCode", level: 90, icon: Wrench, color: "#007ACC" },
-      { name: "Postman", level: 75, icon: Wrench, color: "#FF6C37" },
-      { name: "Jira", level: 55, icon: Wrench, color: "#0052CC" },
-      { name: "Power BI", level: 50, icon: Wrench, color: "#F2C811" },
+      { name: "Git", level: 80, icon: Wrench, color: "#FF5A36" },
+      { name: "VSCode", level: 90, icon: Wrench, color: "#FF5A36" },
+      { name: "Postman", level: 75, icon: Wrench, color: "#FF5A36" },
+      { name: "Jira", level: 50, icon: Wrench, color: "#FF5A36" },
+      { name: "Power BI", level: 50, icon: Wrench, color: "#FF5A36" },
+      { name: "AWS Cloud", level: 50, icon: Wrench, color: "#FF5A36" },
+      { name: "WordPress", level: 70, icon: Wrench, color: "#FF5A36" },
     ]
   }
 ];
@@ -95,15 +97,15 @@ export const PROJECTS: Project[] = [
 
 export const EDUCATIONS: Education[] = [
   {
-    degree: "Passerelles Numériques Cambodia",
-    institution: "Web Development Program",
+    degree: "Web Development Program",
+    institution: "Passerelles Numériques Cambodia",
     period: "2025 - Present",
     description: "Intensive frontend web development program focusing on modern technologies and industry best practices.",
     tags: ["Frontend Development", "Team Collaboration", "Time Management"]
   },
   {
-    degree: "Rovieng High School",
-    institution: "High School Diploma ",
+    degree: "High School Diploma",
+    institution: "Rovieng High School",
     period: "2022 - 2024",
     description: "Completed secondary education with focus on mathematics and General Knowledge fundamentals.",
     tags: ["Mathematics Excellence", "Baccalaureate Certificate", "General Knowledge"]
@@ -125,7 +127,13 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "PNC WEP Coordinator",
     content: "Ya is a technically strong student with excellent problem-solving skills. His passion for coding and attention to detail make him stand out in web development.",
     avatar: "https://media.licdn.com/dms/image/v2/C5603AQEy_W2B5osjlQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1610784133410?e=1781740800&v=beta&t=F2Qq4_EUR_Lhq36tt55m064luXrlKuIc4Hevvr4RJeY"
-  }
+  },
+  {
+    name: "Sovanchansreyleap Kheng",
+    role: "PNC English Trainer",
+    content: "Ya is a creative and skilled student who consistently delivers quality work. He’s dedicated, reliable, and always eager to learn.",
+    avatar: "https://chandyneat-portfolio.vercel.app/teacher/leap.jpg"
+  },
 ];
 
 export const CONTACT_INFO = {

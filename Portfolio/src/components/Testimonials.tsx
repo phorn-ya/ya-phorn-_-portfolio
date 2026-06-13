@@ -1,65 +1,110 @@
-import { motion } from 'motion/react';
-import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { TESTIMONIALS } from '../constants';
-import { useState } from 'react';
+import { motion, AnimatePresence } from "motion/react";
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { TESTIMONIALS } from "../constants";
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
 
-  const next = () => setActive((prev) => (prev + 1) % TESTIMONIALS.length);
-  const prev = () => setActive((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+  const next = () =>
+    setActive((prev) => (prev + 1) % TESTIMONIALS.length);
+
+  const prev = () =>
+    setActive(
+      (prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length
+    );
 
   return (
-    <section id="testimonials" className="py-24 px-6 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center mb-20 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">Testimonials</h2>
-          <div className="w-20 h-1.5 bg-rose-500 rounded-full" />
+    <section
+      id="testimonials"
+      className="py-24 bg-slate-100 dark:bg-slate-900"
+    >
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold text-rose-500">
+            Testimonials
+          </h2>
+
+          <div className="w-28 h-1 bg-rose-500 rounded-full mx-auto mt-4" />
         </div>
 
-        <div className="max-w-4xl mx-auto relative">
-          <div className="overflow-hidden p-4">
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="bg-white dark:bg-slate-800 p-10 lg:p-16 rounded-[3rem] shadow-2xl relative border border-slate-100 dark:border-slate-700"
-            >
-              <Quote size={64} className="absolute -top-4 -left-4 text-rose-500/10 rotate-12" />
-              
-              <div className="relative z-10">
-                <p className="text-xl lg:text-2xl text-slate-700 dark:text-slate-200 leading-relaxed italic mb-10 text-center">
+        {/* Testimonial Card */}
+        <div className="relative">
+          <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-10 md:p-16 min-h-[420px] flex flex-col justify-between">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                {/* Quote */}
+                <Quote
+                  size={60}
+                  className="text-rose-500 mb-8"
+                  strokeWidth={1.5}
+                />
+
+                {/* Content */}
+                <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl">
                   "{TESTIMONIALS[active].content}"
                 </p>
-                
-                <div className="flex items-center justify-center gap-4">
-                  <img 
-                    src={TESTIMONIALS[active].avatar} 
-                    alt={TESTIMONIALS[active].name}
-                    className="w-16 h-16 rounded-full border-4 border-rose-500/20"
-                  />
-                  <div className="text-left">
-                    <h4 className="text-lg font-bold dark:text-white leading-tight">{TESTIMONIALS[active].name}</h4>
-                    <p className="text-rose-500 text-sm font-bold">{TESTIMONIALS[active].role}</p>
+
+                {/* Footer */}
+                <div className="mt-12 flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={TESTIMONIALS[active].avatar}
+                      alt={TESTIMONIALS[active].name}
+                      className="w-20 h-20 rounded-full object-cover"
+                    />
+
+                    <div>
+                      <h4 className="text-2xl font-bold text-slate-900 dark:text-white">
+                        {TESTIMONIALS[active].name}
+                      </h4>
+
+                      <p className="text-rose-500 font-semibold">
+                        {TESTIMONIALS[active].role}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Arrows */}
+                  <div className="flex gap-3">
+                    <button
+                      onClick={prev}
+                      className="w-14 h-14 rounded-full bg-rose-500 text-white flex items-center justify-center hover:scale-110 transition"
+                    >
+                      <ChevronLeft size={24} />
+                    </button>
+
+                    <button
+                      onClick={next}
+                      className="w-14 h-14 rounded-full bg-rose-500 text-white flex items-center justify-center hover:scale-110 transition"
+                    >
+                      <ChevronRight size={24} />
+                    </button>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
-          <div className="flex justify-center gap-4 mt-10">
-            <button 
-              onClick={prev}
-              className="p-4 rounded-2xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-rose-500 hover:text-white transition-all shadow-lg"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              onClick={next}
-              className="p-4 rounded-2xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-rose-500 hover:text-white transition-all shadow-lg"
-            >
-              <ChevronRight size={24} />
-            </button>
+          {/* Dots */}
+          <div className="flex justify-center gap-3 mt-8">
+            {TESTIMONIALS.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActive(index)}
+                className={`h-3 rounded-full transition-all duration-300 ${active === index
+                    ? "w-10 bg-rose-500"
+                    : "w-3 bg-slate-300"
+                  }`}
+              />
+            ))}
           </div>
         </div>
       </div>

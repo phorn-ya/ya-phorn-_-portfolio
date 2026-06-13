@@ -1,89 +1,150 @@
-import { motion } from 'motion/react';
-import { LayoutGrid, MessageSquare, ArrowDown } from 'lucide-react';
-import profileImage from '../image/profile.jpg';
+import { motion } from "motion/react";
+import {
+  LayoutGrid,
+  MessageSquare,
+  ArrowDown,
+  Code2,
+  Globe,
+  Rocket,
+} from "lucide-react";
+import { TypeAnimation } from "react-type-animation";
+import profileImage from "../image/profile.jpg";
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 px-6 overflow-hidden bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
-        {/* Text Content */}
+    <section
+      id="home"
+      className="min-h-screen flex items-center bg-slate-100 dark:bg-slate-900 px-6 relative overflow-hidden transition-colors duration-300"
+    >
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
+        {/* LEFT CONTENT */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative z-10"
+          transition={{ duration: 0.8 }}
         >
+          {/* Greeting */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 text-sm font-medium mb-6"
+            className="mb-6 text-5xl"
           >
-            <span>👋 Hi there!</span>
+            👋
           </motion.div>
-          
-          <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-[1.1] mb-6">
-            Hi, I'm <span className="text-rose-500">Ya Phorn</span>
-          </h1>
-          
-          <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-400 mb-8 max-w-lg leading-relaxed">
-            A Passionate <span className="text-slate-900 dark:text-white font-semibold">Web Developer</span>
-            <br />
-            Crafting Interactive & Meaningful Experiences for the Modern Web
-          </p>
 
-          <div className="flex flex-wrap gap-4 mb-12">
+          {/* Main Heading */}
+          <h1 className="text-6lg md:text-7xl lg:text-8lg font-extrabold leading-none">
+            <span className="text-slate-900 dark:text-white">
+              Hi, I'm
+            </span>{" "}
+            <span className="text-rose-500">Ya</span>
+            <br />
+            <span className="text-rose-500">Phorn</span>
+          </h1>
+
+          {/* Subtitle */}
+          <div className="mt-8">
+            <h2 className="text-3xl lg:text-4xl text-slate-600 dark:text-slate-300">
+              A Passionate{" "}
+              <span className="text-rose-500 font-semibold">
+                <TypeAnimation
+                  sequence={[
+                    "Web Developer",
+                    2000,
+                    "Frontend Developer",
+                    2000,
+                    "UI/UX Designer",
+                    2000,
+                  ]}
+                  speed={50}
+                  repeat={Infinity}
+                />
+              </span>
+            </h2>
+
+            <p className="mt-5 text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
+              Crafting Interactive & Meaningful Experiences
+              for the Modern Web.
+            </p>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-5 mt-10">
             <motion.a
               href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-2xl font-bold flex items-center gap-2 shadow-xl shadow-rose-500/25 transition-colors"
+              className="px-10 py-5 bg-rose-500 hover:bg-rose-600 text-white rounded-full font-bold shadow-xl shadow-rose-500/30 flex items-center gap-2 transition"
             >
               <LayoutGrid size={20} />
               View My Work
             </motion.a>
+
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-200 dark:border-slate-700 hover:border-rose-500 dark:hover:border-rose-500 rounded-2xl font-bold flex items-center gap-2 transition-all"
+              className="px-10 py-5 border-2 border-rose-500 text-rose-500 hover:bg-rose-500 hover:text-white rounded-full font-bold flex items-center gap-2 transition"
             >
               <MessageSquare size={20} />
               Get In Touch
             </motion.a>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="flex items-center gap-2 text-slate-400 text-sm animate-bounce"
-          >
-            <span>Scroll Down</span>
-            <ArrowDown size={14} />
-          </motion.div>
         </motion.div>
 
-        {/* Hero Image */}
+        {/* RIGHT CONTENT */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: "backOut" }}
-          className="relative lg:block"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="relative flex justify-center"
         >
-          <div className="relative z-10 p-4 bg-white dark:bg-slate-800 rounded-[3rem] shadow-2xl border-4 border-rose-500/10 dark:border-rose-500/20 max-w-md mx-auto transform hover:rotate-3 transition-transform duration-500">
-            <img 
-              src={profileImage}
-              alt="Ya Phorn"
-              className="w-full h-auto rounded-[2.5rem] object-cover aspect-square shadow-inner"
-            />
+          {/* Circle Background */}
+          <div className="absolute w-[550px] h-[550px] rounded-full border border-rose-300 opacity-50" />
+
+          {/* Floating Icons */}
+          <div className="absolute top-20 left-0 bg-green-100 p-4 rounded-2xl shadow-lg rotate-12">
+            <Code2 className="text-green-600" size={28} />
           </div>
-          
-          {/* Decorative Elements */}
-          <div className="absolute -top-10 -right-10 w-64 h-64 bg-rose-500/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
+
+          <div className="absolute top-60 -left-8 bg-blue-100 p-4 rounded-2xl shadow-lg -rotate-12">
+            <Globe className="text-blue-600" size={28} />
+          </div>
+
+          <div className="absolute top-48 right-0 bg-yellow-100 p-4 rounded-2xl shadow-lg rotate-12">
+            <Rocket className="text-yellow-600" size={28} />
+          </div>
+
+          {/* Image */}
+          <div className="relative z-10">
+            <div className="border-[8px] border-rose-500 rounded-[2rem] overflow-hidden shadow-2xl">
+              <img
+                src={profileImage}
+                alt="Ya Phorn"
+                className="w-[420px] h-[500px] object-cover"
+              />
+            </div>
+          </div>
         </motion.div>
       </div>
+
+      {/* Scroll Down */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
+      >
+        <span className="text-slate-500 dark:text-slate-400 font-medium mb-2">
+          Scroll Down
+        </span>
+
+        <ArrowDown
+          size={24}
+          className="text-rose-500 animate-bounce"
+        />
+      </motion.div>
     </section>
   );
 }
