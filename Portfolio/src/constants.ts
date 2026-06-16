@@ -26,7 +26,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: "HTML5", level: 90, icon: Layout, color: "#2298F2" },
       { name: "CSS3", level: 85, icon: Layout, color: "#2298F2" },
       { name: "JavaScript", level: 80, icon: Code2, color: "#2298F2" },
-      { name: "Vue.js", level: 75, icon: Code2, color: "#2298F2" },
+      { name: "Vue.js", level: 65, icon: Code2, color: "#2298F2" },
+      { name: "React.js", level: 75, icon: Code2, color: "#2298F2" },
       { name: "Tailwind CSS", level: 70, icon: Layout, color: "#2298F2" },
     ]
   },

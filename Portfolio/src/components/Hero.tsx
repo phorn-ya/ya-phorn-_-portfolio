@@ -38,8 +38,7 @@ export default function Hero() {
             <span className="text-slate-900 dark:text-white">
               Hi, I'm
             </span>{" "}
-            <span className="text-rose-500">Ya</span>
-            <br />
+            <span className="text-rose-500">Ya</span>{" "}
             <span className="text-rose-500">Phorn</span>
           </h1>
 

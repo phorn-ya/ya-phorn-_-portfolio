@@ -34,7 +34,7 @@ const SKILL_EMOJIS: Record<string, string> = {
   CSS3: '🎨',
   JavaScript: '⚡',
   'Vue.js': '💚',
-  'Next.js': '📦',
+  'React.js': '⚛️',
   'Tailwind CSS': '🌀',
   PHP: '🐘',
   Laravel: '🚀',

@@ -41,7 +41,7 @@ export default function Contact() {
                   transition={{ delay: idx * 0.1 }}
                   className="flex items-center gap-6 p-6 rounded-[2rem] bg-slate-50 dark:bg-slate-800 hover:bg-rose-500/5 dark:hover:bg-rose-500/10 border border-slate-100 dark:border-slate-700 group transition-all"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-700 flex items-center justify-center text-rose-500 shadow-md group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-14 rounded-2xl bg-white dark:bg-slate-700 flex items-center justify-center text-rose-500 shadow-md group-hover:scale-110 transition-transform">
                     <item.icon size={24} />
                   </div>
                   <div>
@@ -53,7 +53,7 @@ export default function Contact() {
             </div>
 
             <div className="pt-8 flex items-center gap-4">
-              <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Follow Me</span>
+              <span className="text-sm font-bold uppercase tracking-widest">Follow Me</span>
               <div className="flex gap-4">
                 {CONTACT_INFO.socials.map((social) => (
                   <motion.a
